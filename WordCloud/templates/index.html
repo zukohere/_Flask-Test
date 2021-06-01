@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- Load d3-cloud -->
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+<title>Stock Visualizations</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <select id="selIris" onchange="optionChanged(this.value)">
+        <option value="AMZN">AMZN</option>
+        <option value="GOOGL">GOOGL</option>
+        <!-- <option value="Iris-virginica">Iris-virginica</option> -->
+      </select>
+
+    <div id="my_dataviz"></div>
+    <script src="../static/js/wordcloud.js"></script>
+    <!-- <script src="../static/js/visuals.js"></script> -->
+</div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+<!-- Load plotcloud.js -->
+
+<!-- <select id="selDataset">
+  <option value="data_from_1958_to_1969">data_from_1958_to_1969</option>
+  <option value="data_of_the_1970s">data_of_the_1970s</option>
+  <option value="data_of_the_1980s">data_of_the_1980s</option>
+  <option value="data_of_the_1990s">data_of_the_1990s</option>
+  <option value="data_of_the_2000s">data_of_the_2000s</option>
+  <option value="data_of_the_2010s">data_of_the_2010s</option>
+</select> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</body>
+</html>
