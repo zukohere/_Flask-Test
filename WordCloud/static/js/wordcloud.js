@@ -3,7 +3,24 @@ function optionChanged(selection) {
   // If all is selected, render original histogram
     stockCloud(selection);
 }
-var slice = 100000
+
+//NOTE: Must link to stock select dropdown
+//Other custom choices should include:
+// - Part(s) of Speech
+// - slice (num words)
+// - color?
+
+//NOTE: Tooltip info:
+// - word definition?
+// - article sources?
+// - num times appears?
+
+
+// Replace optionChanged with transition function instead of re-write/add.
+
+
+var slice = 100000 // Enable user to select
+// other variables maybe color
 function stockCloud(stock_name,slice) {d3.json(`/stock-page/${stock_name}`).then(function(data) {
 // Promise Pending
     const dataPromise = d3.json(`/stock-page/${stock_name}`);
