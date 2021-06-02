@@ -11,6 +11,12 @@
 </head>
 <body>
   <div class="container-fluid">
+    <select id="selPOS" onchange="posChanged(this.value)">
+      <option value="">ALL</option>
+      <option value="NOUN">Noun</option>
+      <option value="ADJ">Adjective</option>
+      <option value="VERB">Verb</option>
+    </select>
     <select id="selColor" onchange="colorChanged(this.value)"></select>
       <select id="selData" onchange="dataChanged(this.value)">
         <option value="AMZN">AMZN</option>
@@ -19,7 +25,7 @@
       </select>
 
     <div id="my_dataviz"></div>
-    <script src="../static/js/wordcloud.js"></script>
+    <script src="../static/js/wordcloud_static.js"></script>
     <!-- <script src="../static/js/visuals.js"></script> -->
 </div>
 

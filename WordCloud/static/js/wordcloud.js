@@ -1,9 +1,43 @@
-console.log("hello")
-function optionChanged(selection) {
-  // If all is selected, render original histogram
-    stockCloud(selection);
+function colorChanged(selection) {
+  UserColor = d3.select("#selColor").node().value
+
+d3.select("#my_dataviz").selectAll("text")
+      .transition()
+      .duration(1000)
+      .style("fill", UserColor)
 }
 
+function dataChanged(selection) {
+  console.log(d3.select("#selData").node().value)
+}
+
+function init() {
+  // Grab the color drop down
+  var colorMenu = d3.select("#selColor");
+  // create a list of color options and populate it
+  ["Blue",
+    "Red",
+    "Maroon",
+    "Yellow",
+    "Olive",
+    "Lime",
+    "Green",
+    "Aqua",
+    "Teal",
+    "Navy",
+    "Fuchsia",
+    "Purple",
+    "lightgray",
+    "Black",
+  ].forEach(d => colorMenu.append("option").append("value").text(d))
+
+  var stock_name = d3.select("#selData").node().value
+  
+  stockCloud(stock_name)
+
+}
+
+init()
 //NOTE: Must link to stock select dropdown
 //Other custom choices should include:
 // - Part(s) of Speech
@@ -60,13 +94,13 @@ function stockCloud(stock_name,slice) {d3.json(`/stock-page/${stock_name}`).then
         .data(words)
         .enter().append("text")
         .style("font-size", function (d) { return d.size; })
-        .style("fill", "#69b3a2")
+        .style("fill", d3.select("#selColor").node().value)
         .attr("text-anchor", "middle")
         .style("font-family", "Impact")
         .attr("transform", function (d) {
           return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
         })
-        .text(function (d) { return d.text; });
+        .text(function (d) { return d.text; })
     }
   }
 )
