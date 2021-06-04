@@ -1,11 +1,5 @@
 from flask import Flask, render_template, jsonify
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine
-import numpy as np
 from wordcloud import stock_wordcloud
-
 
 # Flask Setup
 app = Flask(__name__)
